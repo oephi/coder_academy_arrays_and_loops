@@ -13,51 +13,51 @@ shopping_list = ['cheese', 'toilet paper', 'taco shells', 'sushi rolls', '3 avoc
 #    into multiple arrays according to item type. Print all of the arrays with a divider
 #    between each and a total item count for each item.
 
-bathroom_items = []
-fruit = []
-dairy = []
-meals = []
-beverages = []
+# bathroom_items = []
+# fruit = []
+# dairy = []
+# meals = []
+# beverages = []
 
-i = 0
-count = 0
-while i < shopping_list.length     
-    if shopping_list[i] == 'cheese'
-        dairy.push('cheese')
-    elsif shopping_list[i]  == 'toilet paper' 
-        bathroom_items.push('toilet paper')
-    elsif shopping_list[i] == 'soap'
-        bathroom_items.push('soap')
-    elsif shopping_list[i] == 'toothpaste'
-        bathroom_items.push('toothpaste')
-    elsif shopping_list[i] == '3 avocados'
-        fruit.push('3 avocados')
-    elsif shopping_list[i] == '2 pineapples'
-        fruit.push('2 pineapples')
-    elsif shopping_list[i] == 'taco shells'
-        meals.push('taco shells')
-    elsif shopping_list[i] == 'sushi rolls'
-        meals.push('sushi rolls')
-    elsif shopping_list[i] == 'sparkling mineral water'
-        beverages.push('sparkling mineral water')
-    end
-    i+=1
-end
+# i = 0
+# count = 0
+# while i < shopping_list.length     
+#     if shopping_list[i] == 'cheese'
+#         dairy.push('cheese')
+#     elsif shopping_list[i]  == 'toilet paper' 
+#         bathroom_items.push('toilet paper')
+#     elsif shopping_list[i] == 'soap'
+#         bathroom_items.push('soap')
+#     elsif shopping_list[i] == 'toothpaste'
+#         bathroom_items.push('toothpaste')
+#     elsif shopping_list[i] == '3 avocados'
+#         fruit.push('3 avocados')
+#     elsif shopping_list[i] == '2 pineapples'
+#         fruit.push('2 pineapples')
+#     elsif shopping_list[i] == 'taco shells'
+#         meals.push('taco shells')
+#     elsif shopping_list[i] == 'sushi rolls'
+#         meals.push('sushi rolls')
+#     elsif shopping_list[i] == 'sparkling mineral water'
+#         beverages.push('sparkling mineral water')
+#     end
+#     i+=1
+# end
 
-puts dairy
-puts "Item count for dairy is #{dairy.count} item"
-puts "----------------"
-puts bathroom_items
-puts "Item count for bathroom_items is #{bathroom_items.count} items"
-puts "----------------"
-puts fruit
-puts "Item count for fruit is #{fruit.count} items"
-puts "----------------"
-puts meals
-puts "Item count for meals is #{meals.count} items"
-puts "----------------"
-puts beverages
-puts "Item count for beverages is #{beverages.count} item"
+# puts dairy
+# puts "Item count for dairy is #{dairy.count} item"
+# puts "----------------"
+# puts bathroom_items
+# puts "Item count for bathroom_items is #{bathroom_items.count} items"
+# puts "----------------"
+# puts fruit
+# puts "Item count for fruit is #{fruit.count} items"
+# puts "----------------"
+# puts meals
+# puts "Item count for meals is #{meals.count} items"
+# puts "----------------"
+# puts beverages
+# puts "Item count for beverages is #{beverages.count} item"
 
 # 3) Create an array of at least 20 integers.
 #       Use a for loop to:
@@ -104,3 +104,15 @@ puts "Item count for beverages is #{beverages.count} item"
 # string and replace it with its corresponding word. For example: '3 avocados' will
 # become 'three avocados'.
 # Consider using RegEx.
+
+for i in shopping_list
+    if i.include?("3")
+        i.sub!("3", "three")
+        shopping_list.map { |x| x == "3 avocados" ? i : x }
+    elsif i.include?("2")
+        i.sub!("2", "two")
+        shopping_list.map { |x| x == "2 pineapples" ? i : x }
+    end
+end
+
+puts shopping_list
